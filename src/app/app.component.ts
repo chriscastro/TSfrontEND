@@ -1,20 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from './models/usuario';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  providers: [UserService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Ticket-Show';
   public user: Usuario;
   public identity;
   public token;
 
-  constructor(){
-    this.user = new Usuario('','','','');
+  constructor( private _userService:UserService)
+  {
+    this.user = new Usuario('' , '' , '' , '');
   }
-  public onSubmit(){
+
+  ngOnInit() {
+
+  }
+
+  public onSubmit() {
     console.log(this.user);
   }
 }
