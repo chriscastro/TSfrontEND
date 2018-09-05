@@ -6,7 +6,7 @@ import { Usuario } from './models/usuario';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Ticket Show';
+  title = 'Ticket-Show';
   public user: Usuario;
   public identity;
   public token;
