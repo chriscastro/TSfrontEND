@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   public identity;
   public token;
 
-  constructor( private _userService:UserService)
+  constructor( private _userService: UserService)
   {
     this.user = new Usuario('' , '' , '' , '');
   }
