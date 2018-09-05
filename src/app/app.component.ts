@@ -8,7 +8,7 @@ import { UserService } from './services/user.service';
   providers: [UserService]
 })
 export class AppComponent implements OnInit {
-  title = 'Ticket-Show';
+  title = 'TicketShow';
   public user: Usuario;
   public identity;
   public token;
