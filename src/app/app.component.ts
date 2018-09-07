@@ -27,6 +27,9 @@ export class AppComponent implements OnInit {
     this._userService.signup(this.user).subscribe(
       response => {
         console.log(response);
+        if(true){
+          this.identity = true;
+        }
       },
       error => {
         var errorMessage = <any>error;
