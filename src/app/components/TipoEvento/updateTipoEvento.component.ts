@@ -4,14 +4,14 @@ import { TipoEvento } from '../../models/tipoEvento';
 
 @Component({
     selector:    'TipoEvento-Edit' ,
-    templateUrl: '../../views/TipoEvento-Edit.html',
+    templateUrl: '../../views/TipoEvento/TipoEvento-Edit.html',
     providers:  [TipoEventoService]
 })
 
-export class TipoEventoComponent implements OnInit{
+export class UpdateTipoEventoComponent implements OnInit{
     public titulo: string;
     public TipoEvento: TipoEvento;
-    public identity;
+    public identity = true;
     public token;
 
     constructor(private _tipoEventoService: TipoEventoService){
