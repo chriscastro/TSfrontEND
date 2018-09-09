@@ -6,7 +6,7 @@ import { MainComponent} from './components/default/main.component';
 
 //Import TipoEvento
 import { UpdateTipoEventoComponent} from './components/TipoEvento/updateTipoEvento.component';
-
+ 
 const appRoutes: Routes = [
     {path: '', component: MainComponent},
     {path: 'Tipo-Evento', component: UpdateTipoEventoComponent},
