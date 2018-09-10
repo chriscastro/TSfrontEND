@@ -13,6 +13,17 @@ export class TipoEventoService{
         this.url = GLOBAL.url;
     }
 
+    getIdentity(){
+        let strIdentity = localStorage.getItem('identity');
+        let resp  = false;
+        
+        if (strIdentity == "true" ) {
+            resp = true;
+        }
+        console.log(resp);
+        return resp;
+    }
+
     getAllTipoEvento(tipoEvento) {
         let params = JSON.stringify(tipoEvento) ;
         let headers = new Headers({'Content-Type': 'application/json'});

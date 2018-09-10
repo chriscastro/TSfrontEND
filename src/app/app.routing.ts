@@ -5,11 +5,13 @@ import { BlankComponent} from './components/default/blank.component';
 import { MainComponent} from './components/default/main.component';
 
 //Import TipoEvento
+import { GetAllTipoEventoComponent} from './components/TipoEvento/getAllTipoEvento.component';
 import { UpdateTipoEventoComponent} from './components/TipoEvento/updateTipoEvento.component';
  
 const appRoutes: Routes = [
     {path: '', component: MainComponent},
-    {path: 'Tipo-Evento', component: UpdateTipoEventoComponent},
+    {path: 'Tipo-Evento/:page', component: GetAllTipoEventoComponent},
+    {path: 'Tipo-Evento-Update', component: UpdateTipoEventoComponent},
     {path: '**', component: BlankComponent}
 ];
 

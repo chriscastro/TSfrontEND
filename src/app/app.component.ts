@@ -10,16 +10,20 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit {
   title = 'Ticket-Show';
   public user: Usuario;
-  public identity;
+  public identity: boolean;
   public token;
 
   constructor( private _userService: UserService) {
     this.user = new Usuario('' , '' , '' , '');
+    console.log(this.identity);
   }
 
   ngOnInit() {
     //var texto =  this._userService.signup();
     //console.log(texto);
+  
+    this.identity=this._userService.getIdentity();
+    console.log(this.identity);
   }
 
   public onSubmit() {
@@ -27,9 +31,11 @@ export class AppComponent implements OnInit {
     this._userService.signup(this.user).subscribe(
       response => {
         console.log(response);
-        if(true){
+        if (true) {
           this.identity = true;
+          localStorage.setItem('identity', "true" );
         }
+        window.location.reload()
       },
       error => {
         var errorMessage = <any>error;
@@ -39,5 +45,10 @@ export class AppComponent implements OnInit {
         }
       }
     );
+  }
+  public LogOut() {
+    this.identity = false;
+    localStorage.setItem('identity', "false");
+    window.location.reload()
   }
 }

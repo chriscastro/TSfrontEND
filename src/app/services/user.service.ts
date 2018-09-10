@@ -26,4 +26,19 @@ export class UserService{
         return this._http.post(this.url + 'getAllTipoEvento ', params, {headers: headers})
                          .map(res => res.json());
     }
+
+    getIdentity(){
+        let strIdentity = localStorage.getItem('identity');
+        let resp  = false;
+        
+        if (strIdentity == "true" ) {
+            resp = true;
+        }
+        console.log(resp);
+        return resp;
+    }
+
+    getToken(){
+        return 'testToken';
+    }
 }
